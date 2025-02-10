@@ -24,7 +24,7 @@ import GalleryPage from "./pages/Gallery/GalleryPage";
 import UpdateFood from "./pages/Dashboard/UpdateFood";
 import ScrollToTop from "./ScrollTop";
 import ContactUs from "./pages/Home/ContactUs";
-
+import NotFoundPage from "./components/NotFound";
 
 
 
@@ -111,6 +111,13 @@ const router = createBrowserRouter([
 
 
     ],
+  },
+
+
+
+  {
+    path: "*",
+    element: <NotFoundPage></NotFoundPage>,
   },
 ]);
 

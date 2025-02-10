@@ -6,7 +6,7 @@ import { Link, NavLink } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import { 
   Menu, X, Sun, Moon, Home, User, UserIcon, ShoppingCart, Image, 
-  PlusCircle, ClipboardList, Package, LogOut, UserCircle, Phone 
+  PlusCircle, ClipboardList, Package, LogOut, UserCircle, Phone, PieChartIcon 
 } from 'lucide-react';
 
 const Navbar = () => {
@@ -53,6 +53,7 @@ const Navbar = () => {
     { path: '/allfood', label: 'All Foods', icon: ShoppingCart },
     { path: '/gallery', label: 'Gallery', icon: Image },
     { path: '/contact', label: 'Contact Us', icon: Phone },
+    { path: "*", label: "Statistics", icon: PieChartIcon },
     { path: '/profile', label: 'Profile', icon: UserCircle },
   ];
 
@@ -104,6 +105,9 @@ const Navbar = () => {
                   </NavLink>
                 ))}
 
+                
+                {user ? (<div className="flex-grow space-y-4">
+
                 <Link
                   to="/myfood"
                   onClick={toggleMobileMenu}
@@ -130,6 +134,7 @@ const Navbar = () => {
                   <ClipboardList size={18} className="text-emerald-600 dark:text-emerald-200" />
                   <span>My Orders</span>
                 </Link>
+                </div>):null}
               </div>
 
               {/* User Section */}
